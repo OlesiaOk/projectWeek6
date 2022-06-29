@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+  background: #daeaf1;
+  font-family: "Roboto", sans-serif;
+}
+#date {
+  text-align: center;
+  font-size: calc(1.3rem + 0.6vw);
+  font-weight: bold;
+  list-style-type: none;
+}
+#info {
+  list-style-type: none;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+.sun {
+  color: #ffd24c;
+}
+.col-2 {
+  text-align: center;
+  font-size: 16px;
+}
+.search-form {
+  width: 100%;
+}
