@@ -25,7 +25,7 @@ function reciveTime() {
     "Sep",
     "Oct",
     "Nov",
-    "Dec"
+    "Dec",
   ];
   let month = monthes[currentTime.getMonth()];
   return `${day}, ${date} ${month} ${hours}:${minutes}`;
@@ -43,6 +43,8 @@ function showCurrentTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 }
 function searchCity(city) {
   let apiKey = "3b6b66f380d0f8c6b4889aa8f7d07c34";
