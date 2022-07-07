@@ -34,3 +34,9 @@ h3 {
 small {
   text-align: center;
 }
+.weather-app {
+  max-width: 600 px;
+  margin: 30px auto;
+  padding: 20 px;
+  border: 1 px solid #dadde1;
+}
