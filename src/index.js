@@ -45,7 +45,11 @@ function showCurrentTemperature(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#icon").innerHTML = response.data.weather[0].icon;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 function searchCity(city) {
   let apiKey = "3b6b66f380d0f8c6b4889aa8f7d07c34";
