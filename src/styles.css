@@ -41,3 +41,6 @@ small {
   padding: 20 px;
   border: 1 px solid #dadde1;
 }
+li {
+  text-transform: capitalize;
+}
