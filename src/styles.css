@@ -11,6 +11,7 @@ body {
 }
 #info {
   list-style-type: none;
+  font-size: small;
 }
 h1 {
   text-align: center;
