@@ -45,7 +45,7 @@ function showCurrentTemperature(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#sun").innerHTML = response.data.weather[0].icon;
+  document.querySelector("#icon").innerHTML = response.data.weather[0].icon;
 }
 function searchCity(city) {
   let apiKey = "3b6b66f380d0f8c6b4889aa8f7d07c34";
