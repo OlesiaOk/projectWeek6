@@ -51,6 +51,7 @@ function showCurrentTemperature(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+  celsiusTemperature = response.data.main.temp;
 }
 function searchCity(city) {
   let apiKey = "3b6b66f380d0f8c6b4889aa8f7d07c34";
@@ -74,6 +75,7 @@ function searchLocation(position) {
   axios.get(apiUrl).then(showCurrentTemperature);
   console.log(apiUrl);
 }
+
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
@@ -83,5 +85,16 @@ searchCityTag.addEventListener("submit", handleSubmit);
 
 const currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocation);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  let temperatureElement = document.querySelector("#temperatureValue");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("Kyiv");

@@ -44,3 +44,6 @@ small {
 li {
   text-transform: capitalize;
 }
+.info {
+  font-size: 14 px;
+}
