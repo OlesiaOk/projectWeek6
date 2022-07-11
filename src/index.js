@@ -33,6 +33,26 @@ function reciveTime() {
 let currentDate = document.querySelector("#date");
 currentDate.innerHTML = reciveTime();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+          <div class="weather-forecast-date">${day}</div>
+          <div class="weather-forecast-temperature"><span class="temperature-max">20℃</span> <span class="temperature-min">12℃</span></div>
+          <div class="weather-forecast-icon"><img src=""  alt="Clear" width="42" id=""/></div>
+                   
+         </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showCurrentTemperature(response) {
   const ct = document.querySelector("#city");
   ct.innerHTML = response.data.name;
@@ -105,3 +125,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Kyiv");
+displayForecast();
